@@ -1,0 +1,5 @@
+package com.example.shoes_ui_app
+
+import io.flutter.embedding.android.FlutterActivity
+
+class MainActivity : FlutterActivity()
