@@ -10,6 +10,7 @@ class ShoeDetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final screenHeight = MediaQuery.of(context).size.height;
+    final screenWidth = MediaQuery.of(context).size.width;
 
     return Scaffold(
       backgroundColor: Colors.white,
@@ -65,20 +66,26 @@ class ShoeDetailScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Size',
+                    'Size :',
                     style: const TextStyle(
                       fontSize: 16,
                       color: Colors.black,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
+                  SizedBox(height: screenHeight * 0.02),
                   Container(
-                    // padding: EdgeInsets.symmetric(vertical: 5, horizontal: 10),
-                    decoration: BoxDecoration(color: Colors.black),
+                    height: screenHeight * 0.06,
+                    width: screenWidth * 0.12,
+                    decoration: BoxDecoration(
+                      color: Colors.black,
+                      borderRadius: BorderRadius.circular(12),
+                    ),
                     child: Center(
                       child: Text('9', style: TextStyle(color: Colors.white)),
                     ),
                   ),
+                  SizedBox(height: screenHeight * 0.02),
                   Text(
                     shoe.name,
                     style: const TextStyle(
