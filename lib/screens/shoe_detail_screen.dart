@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shoes_ui_app/widgets/size_card.dart';
 
 import '../model/shoe_model.dart';
 
@@ -16,6 +17,7 @@ class ShoeDetailScreen extends StatelessWidget {
       backgroundColor: Colors.white,
       body: SafeArea(
         child: SingleChildScrollView(
+          scrollDirection: Axis.vertical,
           padding: const EdgeInsets.all(16.0),
           child: Column(
             children: [
@@ -74,17 +76,19 @@ class ShoeDetailScreen extends StatelessWidget {
                     ),
                   ),
                   SizedBox(height: screenHeight * 0.02),
-                  Container(
-                    height: screenHeight * 0.06,
-                    width: screenWidth * 0.12,
-                    decoration: BoxDecoration(
-                      color: Colors.black,
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                    child: Center(
-                      child: Text('9', style: TextStyle(color: Colors.white)),
-                    ),
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+
+                    children: [
+                      SizeCard(size: '5'),
+                      SizeCard(size: '6'),
+                      SizeCard(size: '7'),
+                      SizeCard(size: '8'),
+                      SizeCard(size: '9'),
+                      SizeCard(size: '10'),
+                    ],
                   ),
+
                   SizedBox(height: screenHeight * 0.02),
                   Text(
                     shoe.name,
